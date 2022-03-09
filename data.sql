@@ -27,19 +27,12 @@ CREATE TABLE `Commande`(
 );
 ALTER TABLE
     `Commande` ADD PRIMARY KEY `commande_id_primary`(`id`);
-CREATE TABLE `command number`(
+CREATE TABLE `quantity`(
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `Client id` INT NOT NULL,
-    `product number` INT NOT NULL
+    `id produit` INT NOT NULL,
+    `product_number` INT NOT NULL,
+    `price` INT NOT NULL
 );
 ALTER TABLE
-    `command number` ADD PRIMARY KEY `command number_id_primary`(`id`);
-CREATE TABLE `product_number`(
-    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `Unique code` INT NOT NULL,
-    `product_number` INT NOT NULL
-);
-ALTER TABLE
-    `product_number` ADD PRIMARY KEY `product_number_id_primary`(`id`);
-ALTER TABLE
+    `quantity` ADD PRIMARY KEY `quantity_id_primary`(`id`);
     `Commande` ADD CONSTRAINT `commande_adress_foreign` FOREIGN KEY(`Adress`) REFERENCES `command number`(`id`);
